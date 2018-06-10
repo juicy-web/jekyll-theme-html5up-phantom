@@ -78,8 +78,17 @@
 					<section>
 						<h2>Follow</h2>
 						<ul class="icons">
-							{% if site.github.repository_url %}
-							<li><a href="{{ site.github.repository_url }}" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+							{% if site.github_username %}
+							<li><a href="https://github.com/{{ site.github_username }}" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+							{% endif %}
+							{% if site.twitter_username %}
+							<li><a href="https://twitter.com/{{ site.twitter_username }}" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+							{% endif %}
+							{% if site.facebook_username %}
+							<li><a href="https://facebook.com/{{ site.facebook_username }}" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+							{% endif %}
+							{% if site.instagram_username %}
+							<li><a href="https://instagram.com/{{ site.instagram_username }}" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
 							{% endif %}
 						</ul>
 					</section>
