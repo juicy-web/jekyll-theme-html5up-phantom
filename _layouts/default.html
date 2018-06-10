@@ -102,9 +102,17 @@
 					</section>
 					<ul class="copyright">
 						{% if site.author %}
+						{% if site.footer_content %}
+						<li>&copy; 2018 {{ site.author }}. All rights reserved</li><li>{{ site.footer_content }}</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Jekyll Adaption: <a href="https://github.com/juicy-web/jekyll-theme-html5up-phantom">Juicy Web</a></li>
+						{% else %}
 						<li>&copy; 2018 {{ site.author }}. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Jekyll Adaption: <a href="https://github.com/juicy-web/jekyll-theme-html5up-phantom">Juicy Web</a></li>
+						{% endif %}
+						{% else %}
+						{% if site.footer_content %}
+						<li>&copy; 2018 Untitled. All rights reserved</li><li>{{ site.footer_content }}</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Jekyll Adaption: <a href="https://github.com/juicy-web/jekyll-theme-html5up-phantom">Juicy Web</a></li>
 						{% else %}
 						<li>&copy; 2018 Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Jekyll Adaption: <a href="https://github.com/juicy-web/jekyll-theme-html5up-phantom">Juicy Web</a></li>
+						{% endif %}
 						{% endif %}
 					</ul>
 				</div>
