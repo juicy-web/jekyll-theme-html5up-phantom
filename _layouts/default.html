@@ -7,8 +7,9 @@
 -->
 <html>
 	<head>
-		<title>Phantom by HTML5 UP</title>
+		<title>{{ page.title }} | {{ site.title }}</title>
 		<meta charset="utf-8" />
+		{% seo %}
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="{{ '/assets/js/ie/html5shiv.js' | relative_url }}"></script><![endif]-->
 		<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
@@ -16,6 +17,29 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="{{ '/assets/css/ie8.css' | relative_url }}" /><![endif]-->
 	</head>
   <body>
-    {{ content }}
+		<div id="wrapper">
+			<header id="header">
+				<div class="inner">
+
+					<!-- Logo -->
+						<a href="index.html" class="logo">
+							<span class="title">{{ site.title }}</span>
+						</a>
+
+					<!-- Nav -->
+						<nav>
+							<ul>
+								<li><a href="#menu">Menu</a></li>
+							</ul>
+						</nav>
+
+				</div>
+			</header>
+			<div id="main">
+				<div class="inner">
+  				{{ content }}
+				</div>
+			</div>
+		</div>
   </body>
 </html>
