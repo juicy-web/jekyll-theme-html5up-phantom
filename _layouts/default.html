@@ -47,6 +47,20 @@
 
 				</div>
 			</header>
+
+			<nav id="menu">
+				<h2>Menu</h2>
+				<ul>
+					{% if site.navigation %}
+					{% for item in site.navigation %}
+					<li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+					{% endfor %}
+					{% else %}
+					<li><a href="{{ '/' | relative_url }}">Home</a></li>
+					{% endif %}
+				</ul>
+			</nav>
+
 			<div id="main">
 				<div class="inner">
   				{{ content }}
