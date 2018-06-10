@@ -11,10 +11,17 @@
 		<meta charset="utf-8" />
 		{% seo %}
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		{% if site.github.build_revision %}
+		<!--[if lte IE 8]><script src="{{ '/assets/js/ie/html5shiv.js?v=' | append: site.github.build_revision | relative_url }}"></script><![endif]-->
+		<link rel="stylesheet" href="{{ '/assets/css/main.css?v=' | append: site.github.build_revision | relative_url }}" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="{{ '/assets/css/ie9.css?v=' | append: site.github.build_revision | relative_url }}" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="{{ '/assets/css/ie8.css?v=' | append: site.github.build_revision | relative_url }}" /><![endif]-->
+		{% else %}
 		<!--[if lte IE 8]><script src="{{ '/assets/js/ie/html5shiv.js' | relative_url }}"></script><![endif]-->
 		<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="{{ '/assets/css/ie9.css' | relative_url }}" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="{{ '/assets/css/ie8.css' | relative_url }}" /><![endif]-->
+		{% endif %}
 
 		{% if site.head_content %}
   {{ site.head_content }}
@@ -66,6 +73,57 @@
   				{{ content }}
 				</div>
 			</div>
+			<footer id="footer">
+				<div class="inner">
+					<section>
+						<h2>Get in touch</h2>
+						<form method="post" action="#">
+							<div class="field half first">
+								<input type="text" name="name" id="name" placeholder="Name" />
+							</div>
+							<div class="field half">
+								<input type="email" name="email" id="email" placeholder="Email" />
+							</div>
+							<div class="field">
+								<textarea name="message" id="message" placeholder="Message"></textarea>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send" class="special" /></li>
+							</ul>
+						</form>
+					</section>
+					<section>
+						<h2>Follow</h2>
+						<ul class="icons">
+							{% if site.github.repository_url %}
+							<li><a href="{{ site.github.repository_url }}" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+							{% endif %}
+						</ul>
+					</section>
+					<ul class="copyright">
+						{% if site.author %}
+						<li>&copy; 2018 {{ site.author }}. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Jekyll Adaption: <a href="https://github.com/juicy-web/jekyll-theme-html5up-phantom">Juicy Web</a></li>
+						{% else %}
+						<li>&copy; 2018 Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Jekyll Adaption: <a href="https://github.com/juicy-web/jekyll-theme-html5up-phantom">Juicy Web</a></li>
+						{% endif %}
+					</ul>
+				</div>
+			</footer>
 		</div>
+
+		{% if site.github.build_revision %}
+		<script src="{{ '/assets/js/jquery.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+		<script src="{{ '/assets/js/skel.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+		<script src="{{ '/assets/js/util.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+		<!--[if lte IE 8]><script src="{{ '/assets/js/ie/respond.min.js?v=' | append: site.github.build_revision | relative_url }}"></script><![endif]-->
+		<script src="{{ '/assets/js/main.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+		{% else %}
+		<script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
+		<script src="{{ '/assets/js/skel.min.js' | relative_url }}"></script>
+		<script src="{{ '/assets/js/util.js' | relative_url }}"></script>
+		<!--[if lte IE 8]><script src="{{ '/assets/js/ie/respond.min.js' | relative_url }}"></script><![endif]-->
+		<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+		{% endif %}
+
   </body>
 </html>
