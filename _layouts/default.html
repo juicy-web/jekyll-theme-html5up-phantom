@@ -15,6 +15,14 @@
 		<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="{{ '/assets/css/ie9.css' | relative_url }}" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="{{ '/assets/css/ie8.css' | relative_url }}" /><![endif]-->
+
+		{% if site.head_content %}
+  {{ site.head_content }}
+  {% endif %}
+
+  {% if page.head_content %}
+  {{ page.head_content }}
+  {% endif %}
 	</head>
   <body>
 		<div id="wrapper">
