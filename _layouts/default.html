@@ -24,9 +24,9 @@
 					<!-- Logo -->
 						<a href="index.html" class="logo">
 							{% if site.logo %}
-							<span class="symbol"><img src="{{ site.logo }}" alt="" /></span><span class="title">{{ site.title }}</span>
+							<span class="symbol"><img src="{{ site.logo }}" alt="{{ site.title }}" /></span><span class="title">{{ site.title }}</span>
 							{% else %}
-							<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">{{ site.title }}</span>
+							<span class="symbol"><img src="{{ '/theme_images/logo.svg' | relative_url }}" alt="{{ site.title }}" /></span><span class="title">{{ site.title }}</span>
 							{% endif %}
 						</a>
 
